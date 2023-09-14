@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON to HTML Table</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+</table>
+
+<script>
+    
+    var jsonData = [
+    { "name": "Prashant", "age": 22, "gender": "Male" },
+    { "name": "Ritik", "age": 22, "gender": "Male" },
+    { "name": "Rashi", "age": 21, "gender": "Female" },
+    { "name": "Manvi", "age": 22, "gender": "Female" },
+    { "name": "Khushi", "age": 21, "gender": "Female" },
+    { "name": "Hritik", "age": 22, "gender": "Male" },
+    { "name": "Vishal", "age": 23, "gender": "Male" },
+    { "name": "Akshit", "age": 21, "gender": "Male" },
+
+        { "name": "Anchal", "age": 21, "gender": "Female" },
+        { "name": "Sonu", "age": 23, "gender": "Male" },
+        
+    ];
+
+    
+    var tableBody = document.getElementById("table-body");
+
+    
+    jsonData.forEach(function (entry) 
+    {
+        var row = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        nameCell.textContent = entry.name;
+        var ageCell = document.createElement("td");
+        ageCell.textContent = entry.age;
+        var genderCell = document.createElement("td");
+        genderCell.textContent = entry.gender;
+        row.appendChild(nameCell);
+        row.appendChild(ageCell);
+        row.appendChild(genderCell);
+        tableBody.appendChild(row); 
+    });
+</script>
+<form>
+    
+  <div class="mb-3">
+    <br>
+    <br>
+    <label for="exampleInputEmail1" class="form-label">First Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Last Name</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
